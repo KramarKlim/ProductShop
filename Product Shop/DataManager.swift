@@ -47,7 +47,7 @@ class DataManager {
     let listCandy = [
         ListModel(name: "White M&M", image: "https://cdn.shopify.com/s/files/1/2028/7269/products/white_m_m.jpg?v=1574463726", price: 540),
         ListModel(name: "Yellow M&M", image: "https://cdn.shopify.com/s/files/1/2028/7269/products/Yellow_M_M_s_Chocolate_Candy.jpg?v=1547507406", price: 550),
-        ListModel(name: "Gelatin Bears", image: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Oursons_gélatine_marché_Rouffignac.jpg", price: 620),
+        ListModel(name: "Gelatin Bears", image: "https://media.fooducate.com/comments/images/5BD95101-30D9-2680-4B05-8FB331D94156-13336-colorful-gummy-bears.jpeg", price: 620),
         ListModel(name: "Skittles", image: "https://samogon1.ru/wa-data/public/blog/img/53453456354534534.jpg", price: 580)
     ]
     let listSnaks = [

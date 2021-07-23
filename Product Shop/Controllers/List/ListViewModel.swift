@@ -9,11 +9,16 @@ import Foundation
 
 protocol ListViewModelProtocol {
     var list: [ListModel] { get }
-    init(list: [ListModel])
     var count: Int { get }
+    init(list: [ListModel])
+    func viewModelForSelectedRow() -> DetailViewModelProtocol?
+    func selectRow(at indexPath: IndexPath)
+
 }
 
 class ListViewModel: ListViewModelProtocol {
+    
+    var indexPath: IndexPath?
     
     var count: Int {
         list.count
@@ -22,5 +27,15 @@ class ListViewModel: ListViewModelProtocol {
     var list: [ListModel]
     required init(list: [ListModel]) {
         self.list = list
+    }
+    
+    func selectRow(at indexPath: IndexPath) {
+        self.indexPath = indexPath
+    }
+    
+    func viewModelForSelectedRow() -> DetailViewModelProtocol? {
+        guard let indexPath = indexPath else { return nil}
+        let detail = list[indexPath.row]
+        return DetailViewModel(product: detail, count: 1)
     }
 }

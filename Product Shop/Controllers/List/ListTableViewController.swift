@@ -34,8 +34,22 @@ class ListTableViewController: UITableViewController {
             guard let imageData = ImageFetch.shared.fetchImageData(from: merch.image) else { return }
             cell.imageView?.image = UIImage(data: imageData)
         }
-        
-        
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        viewModel.selectRow(at: indexPath)
+        let detailViewModel = viewModel.viewModelForSelectedRow()
+        
+        performSegue(withIdentifier: "detail", sender: detailViewModel)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailVC = segue.destination as! DetailViewController
+        detailVC.viewModel = sender as? DetailViewModelProtocol
+        
+    }
+    
 }
