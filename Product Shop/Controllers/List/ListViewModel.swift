@@ -13,6 +13,7 @@ protocol ListViewModelProtocol {
     init(list: [ListModel])
     func viewModelForSelectedRow() -> DetailViewModelProtocol?
     func selectRow(at indexPath: IndexPath)
+    func outputViewModel(for indexPath: IndexPath) -> OutputViewModelProtocol?
 
 }
 
@@ -25,6 +26,7 @@ class ListViewModel: ListViewModelProtocol {
     }
     
     var list: [ListModel]
+    
     required init(list: [ListModel]) {
         self.list = list
     }
@@ -37,5 +39,10 @@ class ListViewModel: ListViewModelProtocol {
         guard let indexPath = indexPath else { return nil}
         let detail = list[indexPath.row]
         return DetailViewModel(product: detail, count: 1)
+    }
+    
+    func outputViewModel(for indexPath: IndexPath) -> OutputViewModelProtocol? {
+        let output = list[indexPath.row]
+        return OutputViewModel(output: output)
     }
 }

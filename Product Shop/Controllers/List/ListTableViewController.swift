@@ -24,16 +24,11 @@ class ListTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "solo", for: indexPath)
-        let merch = viewModel.list[indexPath.row]
-        cell.textLabel?.text = merch.name
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 20.0)
-        cell.detailTextLabel?.text = "\(merch.price) р/кг"
-        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15.0)
-        DispatchQueue.main.async {
-            guard let imageData = ImageFetch.shared.fetchImageData(from: merch.image) else { return }
-            cell.imageView?.image = UIImage(data: imageData)
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "solo", for: indexPath) as! OutputTableViewCell
+        
+        let outputViewModel = viewModel.outputViewModel(for: indexPath)
+        cell.viewModel = outputViewModel
+        
         return cell
     }
     

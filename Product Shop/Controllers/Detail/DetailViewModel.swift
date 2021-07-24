@@ -33,7 +33,8 @@ class DetailViewModel: DetailViewModelProtocol {
     }
     
     var price: String {
-        "\(product.price) рублей"
+        let cost = count * product.price
+        return "\(cost) рублей"
     }
     
     required init(product: ListModel, count: Int) {
@@ -42,13 +43,13 @@ class DetailViewModel: DetailViewModelProtocol {
     }
     
     func plus() {
-        if count >= 0 {
+        if count >= 1 {
             self.count += 1
         }
     }
     
     func minus() {
-        if count > 0 {
+        if count > 1 {
             self.count -= 1
         }
     }

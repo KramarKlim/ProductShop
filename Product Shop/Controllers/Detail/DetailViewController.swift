@@ -25,12 +25,12 @@ class DetailViewController: UIViewController {
     
     @IBAction func plusButtonAction(_ sender: Any) {
         viewModel.plus()
-        countTextField.text = String(viewModel.count)
+        change()
     }
     
     @IBAction func minusButtonAction(_ sender: Any) {
         viewModel.minus()
-        countTextField.text = String(viewModel.count)
+        change()
     }
     
     private func setUp() {
@@ -41,5 +41,10 @@ class DetailViewController: UIViewController {
             guard let image = self.viewModel.image else { return }
             self.productImage.image = UIImage(data: image)
         }
+    }
+    
+    private func change() {
+        countTextField.text = String(viewModel.count)
+        priceLabel.text = viewModel.price
     }
 }
