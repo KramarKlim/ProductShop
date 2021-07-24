@@ -42,9 +42,9 @@ class ListTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let detailVC = segue.destination as! DetailViewController
-        detailVC.viewModel = sender as? DetailViewModelProtocol
-        
+        if segue.identifier == "detail" {
+            let detailVC = segue.destination as! DetailViewController
+            detailVC.viewModel = sender as? DetailViewModelProtocol
+        }
     }
-    
 }

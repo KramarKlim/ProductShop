@@ -33,6 +33,13 @@ class DetailViewController: UIViewController {
         change()
     }
     
+    
+    @IBAction func SaveButtonAction() {
+        SaveData.shared.saveItem(name: nameLabel.text ?? "", count: countTextField.text ?? "", price: priceLabel.text ?? "")
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
     private func setUp() {
         nameLabel.text = viewModel.name
         priceLabel.text = viewModel.price

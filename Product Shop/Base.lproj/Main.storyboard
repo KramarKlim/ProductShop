@@ -74,7 +74,13 @@
                             <outlet property="delegate" destination="5Z4-0j-TAR" id="g72-rr-oZ5"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Product Range" id="0mW-RR-FnH"/>
+                    <navigationItem key="navigationItem" title="Product Range" id="0mW-RR-FnH">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="ZAq-p3-Cnx">
+                            <connections>
+                                <segue destination="PhQ-4B-NVk" kind="presentation" identifier="raw" id="fmK-cO-kJE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="5LA-0w-acZ" kind="show" identifier="showList" id="Tln-i5-RvH"/>
                     </connections>
@@ -144,7 +150,13 @@
                             <outlet property="delegate" destination="5LA-0w-acZ" id="ycv-fJ-Ltf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="mAn-SN-Z8k"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="mAn-SN-Z8k">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="Ina-1o-vsi">
+                            <connections>
+                                <segue destination="PhQ-4B-NVk" kind="presentation" id="zWp-Pc-2f0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Hfg-PO-g25" kind="show" identifier="detail" id="gbm-XN-GIc"/>
                     </connections>
@@ -189,22 +201,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Xo-ZW-L1L">
-                                <rect key="frame" x="16" y="470.33333333333331" width="162.33333333333334" height="142.33333333333331"/>
+                                <rect key="frame" x="16" y="470.33333333333331" width="130" height="142.33333333333331"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стоимость:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJn-7w-GbH">
-                                        <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJn-7w-GbH">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество(кг.):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwa-uU-tOa">
-                                        <rect key="frame" x="0.0" y="58.000000000000064" width="162.33333333333334" height="26.333333333333336"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwa-uU-tOa">
+                                        <rect key="frame" x="0.0" y="58.000000000000064" width="130" height="26.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Предоплата:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQy-kE-ASS">
-                                        <rect key="frame" x="0.0" y="112.33333333333331" width="162.33333333333334" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prepayment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQy-kE-ASS">
+                                        <rect key="frame" x="0.0" y="112.33333333333331" width="130" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -235,6 +247,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SaveButtonAction" destination="Hfg-PO-g25" eventType="touchUpInside" id="eMO-C8-dz2"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foR-uC-d0n">
                                 <rect key="frame" x="327" y="522" width="35" height="34"/>
@@ -303,8 +318,84 @@
             </objects>
             <point key="canvasLocation" x="2592.753623188406" y="91.304347826086968"/>
         </scene>
+        <!--Корзина-->
+        <scene sceneID="OJ2-Pd-omR">
+            <objects>
+                <tableViewController restorationIdentifier="TrackTableViewController" storyboardIdentifier="TrackTableViewController" id="PhQ-4B-NVk" customClass="BasketTableViewController" customModule="Product_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WbM-G2-pEB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="raw" rowHeight="102" id="28C-Cs-EzP" customClass="CustomTableViewCell" customModule="Product_Shop" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="102"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="28C-Cs-EzP" id="NeB-cb-Bhp">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hxt-TD-qDn">
+                                            <rect key="frame" x="20" y="11" width="126" height="80.666666666666671"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White T-Shirt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyh-MV-Nk1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="126" height="52.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество: 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M48-S4-dLP">
+                                                    <rect key="frame" x="0.0" y="60.333333333333336" width="120.33333333333333" height="20.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.333333333333336" id="FdG-bm-JWA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма: 1131" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pzo-bR-2zT">
+                                            <rect key="frame" x="297.66666666666669" y="42" width="96.333333333333314" height="49"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="hxt-TD-qDn" secondAttribute="bottom" constant="10.33" id="0vr-5u-nS3"/>
+                                        <constraint firstItem="pzo-bR-2zT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hxt-TD-qDn" secondAttribute="trailing" constant="8" symbolic="YES" id="42N-8D-Stg"/>
+                                        <constraint firstItem="hxt-TD-qDn" firstAttribute="top" secondItem="NeB-cb-Bhp" secondAttribute="top" constant="11" id="50k-i4-Aha"/>
+                                        <constraint firstItem="hxt-TD-qDn" firstAttribute="leading" secondItem="NeB-cb-Bhp" secondAttribute="leading" constant="20" symbolic="YES" id="EqG-7T-wQh"/>
+                                        <constraint firstItem="hxt-TD-qDn" firstAttribute="height" secondItem="NeB-cb-Bhp" secondAttribute="height" multiplier="0.79085" id="Fyx-RI-w5l"/>
+                                        <constraint firstItem="pzo-bR-2zT" firstAttribute="bottom" secondItem="NeB-cb-Bhp" secondAttribute="bottomMargin" id="M6G-9F-1s2"/>
+                                        <constraint firstItem="pzo-bR-2zT" firstAttribute="trailing" secondItem="NeB-cb-Bhp" secondAttribute="trailingMargin" id="WPr-ZV-TPL"/>
+                                        <constraint firstItem="pzo-bR-2zT" firstAttribute="top" secondItem="NeB-cb-Bhp" secondAttribute="topMargin" constant="31" id="kqZ-Bb-Gei"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="countLabel" destination="M48-S4-dLP" id="JYm-fF-E3y"/>
+                                    <outlet property="nameLabel" destination="lyh-MV-Nk1" id="cBl-T3-6ca"/>
+                                    <outlet property="priceLabel" destination="pzo-bR-2zT" id="aaW-gD-8jz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PhQ-4B-NVk" id="MwY-sN-MXn"/>
+                            <outlet property="delegate" destination="PhQ-4B-NVk" id="TX0-na-WVs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Корзина" largeTitleDisplayMode="always" id="ov6-xa-qn8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0wR-cE-ONv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008.6956521739132" y="819.64285714285711"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zWp-Pc-2f0"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

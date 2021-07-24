@@ -20,7 +20,7 @@ class OutputViewModel: OutputViewModelProtocol {
     }
     
     var price: String {
-        "\(output.price) р/кг"
+        "\(output.price) RUB/Kg"
     }
     
     var imageData: Data? {
